@@ -1,0 +1,47 @@
+<html> 
+<head> 
+<meta charset="windows-1251" />
+<title></title> 
+</head> 
+<body> 
+<p>ВВЕДИТЕ РАЗМЕРНОСТЬ ТАБЛИЦЫ</p> 
+<form method="post"> 
+<input type="text" name="first"> 
+<input type="text" name="second"> 
+<input type="submit" name="submit"> 
+</form> 
+
+<table>
+<?php
+	echo "<tr><td>";
+	print_r($a);
+	echo "</td></tr>";
+	
+	
+
+?>
+</table>
+
+<?php 
+if (isset($_POST['submit'])) 
+{ 
+$a = $_POST['first']; 
+$b = $_POST['second']; 
+echo "Размерность таблицы: $a х $b"; 
+print_r($_GET["button"]); 
+echo '<table border="1">'; 
+for ($tr=1; $tr<=$a; $tr++){ 
+echo '<tr>'; 
+for ($td=1; $td<=$b; $td++){ 
+
+echo '<td>'. $tr*$td .'</td>'; 
+} 
+echo '</tr>'; 
+} 
+
+echo '</table>'; 
+} 
+
+?> 
+</body> 
+</html>
